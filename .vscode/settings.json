@@ -1,0 +1,11 @@
+{
+  "editor.formatOnSave": true,
+  "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.fullReload": false,
+  "liveServer.settings.multiRootWorkspaceName": "",
+  "liveServer.settings.useLocalIp": true,
+  "liveServer.settings.wait": 0
+}
