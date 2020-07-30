@@ -1,25 +1,49 @@
 const burger = document.querySelector(".nav-burger");
 const navItems = document.querySelector(".Nav-items");
+const contactButton = document.querySelector("#submit");
+const toastEle = document.querySelector("#clientName");
+let success;
+
 navItems.addEventListener("click", toggleNav);
 
 burger.addEventListener("click", toggleNav);
-
 function toggleNav() {
   navItems.classList.toggle("nav-active");
-}
-function submitContact(e) {
-  let contactObj = {};
-  e.preventDefault();
-  let formData = new FormData(e.target);
-  for (let i of formData.entries()) {
-    console.log(i[0] + " " + i[1]);
-    contactObj[i[0]] = i[1];
-  }
-  console.log(contactObj);
 }
 
 $(document).ready(function () {
   // Add smooth scrolling to all links
+  const url = "https://protfolio.free.beeceptor.com";
+
+  $("#form").on("submit", function (e) {
+    let contactObj = {};
+    e.preventDefault();
+    contactButton.innerHTML = "Submiting...";
+    let formData = new FormData(e.target);
+    for (let i of formData.entries()) {
+      console.log(i[0] + " " + i[1]);
+      contactObj[i[0]] = i[1];
+    }
+    let tostMsg = `Hi ${contactObj.name}`;
+    toastEle.innerHTML = tostMsg;
+    fetch(url, {
+      mode: "cors",
+      method: "POST",
+      body: JSON.stringify(contactObj),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((response) => {
+        $(".toast").toast("show");
+        contactButton.innerHTML = "Contact";
+        console.log(response);
+        e.target.reset();
+      })
+      .catch((err) => {
+        return err;
+      });
+  });
   $("a").on("click", function (event) {
     // Make sure this.hash has a value before overriding default behavior
     console.log(this.hash);
@@ -45,3 +69,5 @@ $(document).ready(function () {
     } // End if
   });
 });
+
+function submitData(data) {}

@@ -12,6 +12,10 @@
   <script src="https://kit.fontawesome.com/382868722e.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
 </head>
 
 <body>
@@ -50,8 +54,8 @@
       <div class>
         <img class="picture" src="/assest/mypic.jpg" />
       </div>
-      <h2>Marutha durai</h2>
-      <h5>Web Developer</h5>
+      <h2>Marutha Durai</h2>
+      <h5>Software Engineer</h5>
       <p>I am a software engineer at Infosys. I am
         passionate about programming and web development Always ready to learn and adopt new technologies</p>
       <div class="icon-container">
@@ -140,7 +144,7 @@
       </div>
     </div>
     <div class="work" id="work">
-      <h2 class="title">WORK</h2>
+      <h2 class="title">PROJECTS</h2>
       <div class="container-portfolio">
         <div class='container-card '>
           <div class="card" style="width: 350px;">
@@ -151,7 +155,12 @@
                 A online library web appication developed with MERN(MongoDB,Express, React, NodeJS).User can register,
                 login, add book to cart,borrow book, return book.
               </p>
-              <a type="button" href="https://github.com/Maruth51/ReactLibrary-FrontEnd" target="_blank" class="btn btn-link">view code</a>
+              <section>
+              <a role="button" class="btn btn-outline-primary btn-sm" href="https://github.com/Maruth51/ReactLibrary-FrontEnd" target="_blank">View code</a>
+              <a role="button" class="btn btn-outline-primary btn-sm" href="https://library51.now.sh/" target="_blank" >View demo</a>
+                </section>
+
+                
             </div>
           </div>
         </div>
@@ -163,20 +172,25 @@
               <p class="card-text">
                 A Health care video platform web appication developed with (Postgersql,Express, React, NodeJS).
               </p>
-              <a type="button" href="https://github.com/Maruth51/OmicureAssesment" target="_blank" class="btn btn-link">view code</a>
+              <section>
+              <a role="button" class="btn btn-outline-primary btn-sm" href="https://github.com/Maruth51/OmicureAssesment" target="_blank" class="btn btn-link">View code</a>
+              <a role="button" class="btn btn-outline-primary btn-sm" href="https://csb-5ywy4.maruth51.now.sh/">View demo</a>
+            </section>
             </div>
           </div>
         </div>
         <div class='container-card'>
           <div class="card" style="width: 350px;">
-            <img class="card-img-top p-1" src="assest/school-sudents.png" alt="Card image cap">
+            <img class="card-img-top p-1" src="assest/Bus Booking.png" alt="Card image cap">
             <div class="card-body">
-              <a href="https://b3pys.sse.codesandbox.io/">Student Management</a>
+              <a href="https://bus-booking-fe.maruth51.vercel.app/search">online Bus Booking</a>
               <p class="card-text">
-                A website for managing school studens and teachers, developed with (Postgersql,Express,Hbs templating
-                engine).
+                A bus Booking platform where user can search buses between two stations by date, developed with MERN(MongoDB,Express, React, NodeJS).
               </p>
-              <a type="button" href="https://github.com/Maruth51/Assesment-studentsResults" target="_blank" class="btn btn-link">view code</a>
+              <section>
+              <a role="button" class="btn btn-outline-primary btn-sm" href="https://github.com/Maruth51/Bus-Booking-FE" target="_blank">View code</a>
+              <a role="button" class="btn btn-outline-primary btn-sm" href="https://bus-booking-fe.maruth51.vercel.app/search">View demo</a>
+            </section>
             </div>
           </div>
         </div>
@@ -206,7 +220,7 @@
     <div class="contact" id="contact">
       <h2 class="title">Contact Me</h2>
       <div class="container container-contact col-md-4"></div>
-      <form class="container col-md-6" onsubmit="submitContact(event)">
+      <form class="container col-md-6" id='form'>
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" class="form-control" name="name" id="name" placeholder="John">
@@ -223,7 +237,14 @@
           <label for="comment">Comments</label>
           <textarea class="form-control" name="comment" id="comment" rows="3"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Contact</button>
+        <button type="submit" class="btn btn-primary" id="submit">Contact</button>
+        <div class="toast" data-animation="true" data-delay="3000">
+          <div class="toast-body">
+            <strong id='clientName'></strong></br>
+            <strong>Your info sent to maruth thaks for contact</strong>
+          </div>
+        </div>
+      
       </form>
 
     </div>

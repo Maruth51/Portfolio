@@ -6,9 +6,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: rgb(255, 255, 255);
 }
+
 @media (max-width: 600px) {
   .Navbar {
     top: 0;
@@ -16,6 +18,7 @@ body {
     width: 100%;
     z-index: 9999;
   }
+
   .Navbar .myname {
     font-family: Cambria;
     font-weight: bolder;
@@ -23,18 +26,22 @@ body {
     margin: auto;
     display: block;
   }
+
   .Navbar .nav-burger {
     display: block;
     padding-left: 5vw;
   }
+
   .nav-item .nav-icon {
     display: none;
     transition: ease 0.2s;
   }
+
   .content {
     margin-top: 3.5rem;
   }
 }
+
 /*general*/
 .content {
   display: flex;
@@ -47,15 +54,18 @@ ul {
   margin: 0;
   margin-block-start: 0;
 }
-ul > li {
+
+ul>li {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 a {
   color: inherit;
   text-decoration: none;
 }
+
 .Navbar {
   color: rgb(250, 250, 250);
   background-color: #000044;
@@ -77,6 +87,7 @@ a {
   transition: ease-in 0.3s;
   z-index: 9;
 }
+
 .Navbar .nav-item {
   display: flex;
   align-items: center;
@@ -90,12 +101,15 @@ a {
   border-bottom: 0.1rem solid rgb(214, 214, 214);
   animation: fadeInUp 1s both;
 }
+
 .nav-active {
   transform: translateX(-100%);
 }
+
 .nav-item .nav-icon {
   transition: ease 0.2s;
 }
+
 .content {
   display: flex;
   font-family: "Roboto", sans-serif;
@@ -106,6 +120,7 @@ a {
   animation: fadeInUp 1s both;
   z-index: 0;
 }
+
 .title {
   letter-spacing: 2px;
   text-align: center;
@@ -113,6 +128,7 @@ a {
   font-weight: bolder;
   text-shadow: blue;
 }
+
 .intro {
   display: flex;
   height: 100%;
@@ -122,18 +138,22 @@ a {
   align-items: center;
   text-align: center;
 }
-.intro > h2 {
+
+.intro>h2 {
   color: blue;
   font-weight: bolder;
   letter-spacing: 3px;
 }
-.intro > h5 {
+
+.intro>h5 {
   color: rgb(133, 23, 4);
   letter-spacing: 2px;
 }
-.intro > p {
+
+.intro>p {
   color: #6c757d !important;
 }
+
 .picture {
   margin: auto;
   margin-bottom: 10px;
@@ -178,21 +198,25 @@ a {
 .fa-instagram {
   color: tomato;
 }
+
 .fa-react {
   color: #327bf0;
 }
+
 .skills {
   margin-top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .skill-items {
   margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .skill-item {
   display: flex;
   flex-direction: row;
@@ -202,46 +226,69 @@ a {
   flex-wrap: nowrap;
   margin: 10px 0px;
 }
+
 .skill-item .skill-name {
   font-size: small;
   font-weight: bolder;
   margin: 0;
   padding: 0;
 }
+
 .progress {
   margin: 0px 0px 10px 8px;
 }
+
 .skill-title {
   border-bottom: 4px solid #83c4ec;
   border-radius: 100px;
 }
+
 .work {
   margin: 60px auto;
 }
+
 .container-portfolio {
   margin: 60px auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: stretch;
 }
+
 .container-card {
   margin: 10px 15px;
   padding-left: 5px;
   font-family: "Roboto", sans-serif;
   text-align: left;
 }
+
 .card {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-
   min-height: 400px;
   border-radius: 5px;
 }
-.card-body > a {
+
+.card-body>a:not([role="button"]) {
+
   text-decoration: none;
+  margin-bottom: 0;
+  margin-top: auto;
+  color: #174bbb;
   font-weight: bolder;
-  color: rgb(77, 77, 248);
 }
+
+.card-body>a[role="button"] {
+  text-decoration: none;
+  margin-top: auto;
+
+}
+
+.card-body section {
+  position: absolute;
+  bottom: 15px;
+}
+
 .container-card .card .card-text {
   font-family: "Roboto", sans-serif;
   text-align: left;
@@ -249,10 +296,12 @@ a {
   padding-top: 10px;
   color: rgb(168, 158, 158);
 }
+
 .container-contact {
   display: flex;
   justify-content: center;
 }
+
 .container-education {
   margin: 15px 10%;
   width: 80%;
@@ -260,21 +309,25 @@ a {
   flex-direction: column;
   justify-content: center;
 }
+
 .edu-item {
   margin: 15px 0px;
   border: 1px solid rgb(231, 231, 231);
   border-radius: 5px;
 }
+
 .edu-name {
   width: auto;
   position: relative;
   padding: 1rem;
   padding-left: 1.5rem;
 }
-.edu-item > p {
+
+.edu-item>p {
   width: auto;
   padding-left: 1.5rem;
 }
+
 .edu-name::before {
   content: "";
   display: inline-block;
@@ -286,11 +339,23 @@ a {
   left: 0;
   top: 0;
 }
+
+.toast {
+  z-index: 1;
+  font-weight: bold;
+  color: rgb(253, 253, 253);
+  background-color: rgb(50, 163, 50);
+  padding: 10px;
+  font-size: 16px;
+}
+
 @media (min-width: 600px) {
+
   .myname,
   .nav-burger {
     display: none;
   }
+
   .Navbar {
     display: flex;
     height: 100%;
@@ -315,6 +380,7 @@ a {
     text-align: center;
     width: 5rem;
   }
+
   .Nav-items .nav-item {
     margin: auto;
     height: 0px;
@@ -330,27 +396,33 @@ a {
     padding-left: 0px;
     transition: linear 0.2s;
   }
+
   .nav-item .text {
     display: none;
   }
+
   .nav-active {
     transform: translateX(0);
   }
+
   .Nav-items .nav-item .nav-icon:hover {
     transform: scale(1.3);
     color: tomato;
   }
+
   .content {
     margin-left: 5rem;
     width: auto;
     flex-wrap: wrap;
     justify-content: center;
   }
-  .intro > p {
+
+  .intro>p {
     max-width: 500px;
     margin: 1rem 0 1rem 0;
   }
 }
+
 .footer {
   width: 100%;
   text-align: center;
@@ -358,6 +430,7 @@ a {
   padding: 8px;
   background-color: rgb(236, 236, 236);
 }
+
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -374,6 +447,7 @@ a {
   from {
     width: 0;
   }
+
   to {
     width: 472px;
   }
