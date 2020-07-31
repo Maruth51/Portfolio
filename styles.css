@@ -18,7 +18,19 @@ body {
   color: inherit;
 }
 
+.reach-me h3 {
+  color: #007bb5;
+  padding: 5px;
+  font-weight: bolder;
 
+}
+
+.reach-me a {
+  text-decoration: none;
+  color: #6c757d;
+  padding: 5px;
+  font-size: 16px;
+}
 
 @media (max-width: 600px) {
   .Navbar {
@@ -221,6 +233,19 @@ a {
   color: #327bf0;
 }
 
+.fa-phone {
+  color: green;
+  padding: 2px;
+  margin: 5px;
+
+}
+
+.fa-email {
+  color: rgb(223, 41, 41);
+  padding: 2px;
+  margin: 5px;
+}
+
 .skills {
   margin-top: 5rem;
   display: flex;
@@ -305,6 +330,22 @@ a {
 .card-body section {
   position: absolute;
   bottom: 15px;
+  right: 15px;
+}
+
+.card-body .stack {
+  color: #3844e6;
+  text-transform: capitalize;
+  font-size: 0.9em;
+
+}
+
+.card-text span {
+  color: #517cda;
+  font-size: 0.9em;
+
+
+
 }
 
 .container-card .card .card-text {
@@ -318,6 +359,7 @@ a {
 .container-contact {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .container-education {
