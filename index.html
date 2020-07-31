@@ -70,9 +70,11 @@
       <h5>Software Engineer</h5>
       <p>I am a software engineer at Infosys. I am
         passionate about programming and web development Always ready to learn and adopt new technologies</p>
-        <p><button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#exampleModal">
+        <div>
+          <!-- <button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#exampleModal">
           View Resume
-        </button></p>
+        </button> -->
+         <a role="button" class="btn btn-light btn-sm" href="assest/MaruthaDuraiResume (12).pdf" download> Download Resume</a></div>
       <div class="icon-container">
         <a href="https://github.com/Maruth51" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
         <a href="https://twitter.com/Marutha51" target="_blank" class="fa fa-twitter fa-2x"></a>
@@ -236,18 +238,30 @@
       <h2 class="title">Contact Me</h2>
       <p>Interested in hiring me for your project or just want to say hi? You can fill in the contact form below or send me an email to <a class="btn-link" href="mailto:maruthai.malvoi@gmai.com">Click here </a></p>
       <div class="container container-contact col-md-4"></div>
-      <form class="container col-md-6" id='form'>
+      <form class="needs-validation container col-md-6" id='form' novalidate>
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" class="form-control" name="name" id="name" placeholder="John">
+          <input type="text" class="form-control" name="name" id="name" placeholder="John" required>
+          <div class="invalid-feedback">
+            Please Enter Name.
+          </div>
         </div>
         <div class="form-group">
           <label for="email">Email ID</label>
-          <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
+          <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+          <div class="invalid-feedback">
+            Inavlid email.
+          </div>
+
+        
         </div>
         <div class="form-group">
           <label for="phone">Phone No</label>
-          <input type="text" class="form-control" name="phone" id="phone" placeholder="9998887766">
+          <input type="tel" class="form-control" name="phone" id="phone" placeholder="9998887766"  minlength="10" maxlength="10" required>
+          <div class="invalid-feedback">
+            Phone should be 10 digits
+          </div>
+
         </div>
         <div class="form-group">
           <label for="comment">Comments</label>

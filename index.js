@@ -16,33 +16,43 @@ $(document).ready(function () {
   const url = "https://protfolio.free.beeceptor.com";
 
   $("#form").on("submit", function (e) {
-    let contactObj = {};
-    e.preventDefault();
-    contactButton.innerHTML = "Submiting...";
-    let formData = new FormData(e.target);
-    for (let i of formData.entries()) {
-      console.log(i[0] + " " + i[1]);
-      contactObj[i[0]] = i[1];
+    const form = e.target;
+    if (!form.checkValidity()) {
+      console.log("if");
+      e.preventDefault();
+      e.stopPropagation();
+      form.classList.add("was-validated");
+    } else {
+      console.log("else");
+      let contactObj = {};
+      e.preventDefault();
+      contactButton.innerHTML = "Submiting...";
+      let formData = new FormData(e.target);
+      for (let i of formData.entries()) {
+        console.log(i[0] + " " + i[1]);
+        contactObj[i[0]] = i[1];
+      }
+      let tostMsg = `Hi ${contactObj.name}`;
+      toastEle.innerHTML = tostMsg;
+      fetch(url, {
+        mode: "cors",
+        method: "POST",
+        body: JSON.stringify(contactObj),
+      })
+        .then((res) => {
+          return res.json();
+        })
+        .then((response) => {
+          $(".toast").toast("show");
+          contactButton.innerHTML = "Contact";
+          console.log(response);
+          e.target.reset();
+          form.classList.remove("was-validated");
+        })
+        .catch((err) => {
+          return err;
+        });
     }
-    let tostMsg = `Hi ${contactObj.name}`;
-    toastEle.innerHTML = tostMsg;
-    fetch(url, {
-      mode: "cors",
-      method: "POST",
-      body: JSON.stringify(contactObj),
-    })
-      .then((res) => {
-        return res.json();
-      })
-      .then((response) => {
-        $(".toast").toast("show");
-        contactButton.innerHTML = "Contact";
-        console.log(response);
-        e.target.reset();
-      })
-      .catch((err) => {
-        return err;
-      });
   });
   $("a").on("click", function (event) {
     // Make sure this.hash has a value before overriding default behavior
@@ -69,5 +79,3 @@ $(document).ready(function () {
     } // End if
   });
 });
-
-function submitData(data) {}
